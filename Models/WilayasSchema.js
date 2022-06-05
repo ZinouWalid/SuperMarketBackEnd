@@ -3,10 +3,19 @@ let Schema = mongoose.Schema;
 
 let WilayasSchema = new Schema(
   {
+    id: Number,
     name: String,
-    img: String,
-    showed: Boolean,
-    AdLink: String,
+    cities: [
+      {
+        id: Number,
+        name: String,
+        state_id: Number,
+        state_code: String,
+        state_name: String,
+        country_code: String,
+        price: Number,
+      },
+    ],
   },
   { timestamps: true }
 );

@@ -24,9 +24,7 @@ router.post("/get_communes_by_wilayas", function (req, res, next) {
 router.post("/modify_price", function (req, res, next) {
   Wilayas.updateOne(
     { name: req.body.wilaya, "cities.name": req.body.commune },
-    {
-      $set: { "cities.$.price": req.body.price },
-    },
+    { $set: { "cities.$.price": req.body.price } },
     (err, result) => {
       if (result.modifiedCount == 0)
         return res.status(400).json({ status: 400 });

@@ -7,6 +7,7 @@ const cors = require("cors");
 var productRouter = require("./routes/product");
 var adsRouter = require("./routes/ads");
 var wilayasRouter = require("./routes/wilaya");
+var riderRouter = require("./routes/rider");
 
 var mongoose = require("mongoose");
 mongoose.connect(
@@ -33,5 +34,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/product", productRouter);
 app.use("/ads", adsRouter);
 app.use("/wilaya", wilayasRouter);
+app.use("/rider", riderRouter);
 
 module.exports = app;
